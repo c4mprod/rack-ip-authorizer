@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = RackIpAuthorizer::VERSION
   spec.authors       = ['Thibault El Zamek, Cédric Darné, Lionel Oto']
   spec.email         = ['thibault.elzamek@c4mprod.com, cedric.darne@c4mprod.com, lionel.oto@c4mprod.com']
-  spec.description   = %q{Basic Rack middleware for checking Rails3 request remote ip}
-  spec.summary       = %q{Basic Rack middleware for checking Rails3 request remote ip}
-  spec.homepage      = ''
+  spec.description   = %q{Basic Rack middleware for Rails 3 to authorize access to path by IP}
+  spec.summary       = %q{Basic Rack middleware for Rails 3 to authorize access to path by IP using YML config file}
+  spec.homepage      = 'https://github.com/c4mprod/rack-ip-authorizer'
   spec.license       = 'MIT'
 
   spec.files = Dir[*%w( LICENSE.txt README.md lib/**/* )]
