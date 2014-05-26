@@ -1,6 +1,6 @@
 # Rack::Ip::Authorizer
 
-Basic Rack middleware for checking Rails3 request remote IP
+Basic Rack middleware for Rails 3 to authorize access to path by IP
 
 ## Installation
 
@@ -20,8 +20,8 @@ Or install it yourself as:
 
 ### Rails 3 apps
 
-1. Create a file named "ip_authorizations.yml" in the config directory
-2. Fill it with key as path and values as IPs:
+1. Create a file named "ip_authorizations.yml" in config directory
+2. Fill it with paths (keys) and IPs (values) see example below
 
 ```yaml
 admin:
@@ -33,13 +33,15 @@ superadmin:
     - 192.168.0.2
 ```
 
-Environment filter
+### Environment filter
 
-Create an initializer and fill it with:
+Create an initializer and add:
 
 ```ruby
 Rack::IpAuthorizer.env_to_check = ['staging','development']
 ```
+
+Based on the file names in 'config/environments' you can use any of them including Rails defaults.
 
 ## Contributing
 
