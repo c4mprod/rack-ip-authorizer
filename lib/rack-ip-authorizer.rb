@@ -9,7 +9,7 @@ if defined? Rails
       if File.exists?(path)
         ip_authorizations_by_path = YAML.load_file(path)
       else
-        raise "config/ip_authorizations.yml is missing"
+        raise 'config/ip_authorizations.yml is missing'
       end
 
       class Rack::IpAuthorizer::Railtie < Rails::Railtie

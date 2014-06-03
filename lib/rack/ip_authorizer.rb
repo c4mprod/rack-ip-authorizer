@@ -1,8 +1,8 @@
-require "rack/version"
+require 'rack/version'
 
 module Rack
   class IpAuthorizer
-    @env_to_check = ["production"]
+    @env_to_check = ['production']
     class << self
       attr_accessor :env_to_check
     end

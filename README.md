@@ -20,28 +20,23 @@ Or install it yourself as:
 
 ### Rails 3 apps
 
-1. Create a file named "ip_authorizations.yml" in config directory
-2. Fill it with paths (keys) and IPs (values) see example below
+1. Create an initializer defining the environment you want to watch (production by default), example:
+```ruby
+Rack::IpAuthorizer.env_to_check = ['staging','development']
+```
+2. Create a file named "ip_authorizations.yml" in config directory
+3. Fill it with paths (keys) and IPs (values) see example below
 
 ```yaml
 admin:
     - 192.168.0.1
     - 192.168.0.2
     - 192.168.0.3
-superadmin:
+monitor:
     - 192.168.0.1
     - 192.168.0.2
 ```
-
-### Environment filter
-
-Create an initializer and add:
-
-```ruby
-Rack::IpAuthorizer.env_to_check = ['staging','development']
-```
-
-Based on the file names in 'config/environments' you can use any of them including Rails defaults.
+4. According to this example, path to http://www.my-application.com/admin and http://www.my-application.com/monitor have access restricted by IP  
 
 ## Contributing
 
