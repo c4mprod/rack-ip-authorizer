@@ -16,7 +16,7 @@ module Rack
         req = Rack::Request.new(env)
 
         @ip_authorizations_by_path.each do |protected_url, authorized_ips|
-          if req.path.start_with?("/#{protected_url}") && !authorized_ips.include?(req.env['REMOTE_ADDR'])
+          if req.path.start_with?("/#{protected_url}") && !authorized_ips.include?(req.ip)
             return forbidden
           end
         end
